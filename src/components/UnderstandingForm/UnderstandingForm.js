@@ -11,4 +11,4 @@ class UnderstandingForm extends Component {
     }
 }
 
-export default UnderstandingForm;
+export default connect()(UnderstandingForm);
