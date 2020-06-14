@@ -4,11 +4,21 @@ import './index.css';
 import App from './components/App/App';
 import { createStore, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
-import registerServiceWorker from './registerServiceWorker';
+
 
 const feedbackReducer = (state={}, action) => {
-    // state = [...state, action.payload]
-    return state
+   switch (action.type) {
+            case 'FEELING':
+                return {...state, feeling: action.payload}
+            case 'UNDERSTANDING':
+                return { ...state, understanding: action.payload}
+            case 'SUPPORT':
+                return { ...state, support: action.payload }
+            case 'COMMENTS':
+                return { ...state, comments: action.payload }
+            default:
+                return state;
+   }
 }
 
 
@@ -25,4 +35,4 @@ const reduxStore = createStore(
 ReactDOM.render(<Provider store={reduxStore}><App/></Provider>, 
     document.getElementById('root'));
 
-registerServiceWorker();
+

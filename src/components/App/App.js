@@ -12,22 +12,25 @@ import ConfirmationPage from '../ConfirmationPage/ConfirmationPage';
 class App extends Component {
   render() {
     return (
+      <Router>
       <div className="App">
-        <Router>
+        
 
         <header className="App-header">
           <h1 className="App-title">Feedback!</h1>
           <h4><i>Don't forget it!</i></h4>
-          <FeelingForm/>
+          
         </header>
         <br/>
-        <Route path='/UnderstandingForm' component={UnderstandingForm}/>
+        <Route exact path="/" component={FeelingForm} />
+        <Route path="/UnderstandingForm" component={UnderstandingForm}/>
         <Route path='/CommentForm' component={CommentForm} />
         <Route path='/SupportForm' component={SupportForm} />
         <Route path='/ReviewPage' component={ReviewPage} />
         <Route path='/ConfirmationPage' component={ConfirmationPage} />
-        </Router>
+        
       </div>
+      </Router >
       
     );
   }
