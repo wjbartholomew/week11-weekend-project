@@ -8,8 +8,14 @@ class FeelingForm extends Component{
 
 goToUnderstanding = (event) => {
     event.preventDefault()
-    console.log(this.props)
-    console.log('state:',this.state)
+
+    const feeling = this.state.feeling
+    console.log("input:", feeling)
+
+    if(isNaN(feeling) || feeling < 1 || feeling > 5) {
+        alert("please enter a valid number")
+    }
+    else {
 
     this.props.dispatch({
         type: 'FEELING',
@@ -17,6 +23,7 @@ goToUnderstanding = (event) => {
     })
 
     this.props.history.push('/UnderstandingForm');
+}
 }
 
 handleChange = (event) => {

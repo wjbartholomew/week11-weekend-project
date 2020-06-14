@@ -8,13 +8,22 @@ class UnderstandingForm extends Component {
 
     goToSupport = (event) => {
         event.preventDefault()
-        console.log(this.props)
-        console.log(this.state)
+     
+        const understanding = this.state.understanding
+        console.log("input:", understanding)
+
+        if (isNaN(understanding) || understanding < 1 || understanding > 5) {
+            alert("please enter a valid number")
+        }
+        else {
+
+
         this.props.dispatch({
             type: 'UNDERSTANDING',
             payload: this.state.understanding
         })
         this.props.history.push('/SupportForm');
+    }
     }
 
     handleChange = (event) => {

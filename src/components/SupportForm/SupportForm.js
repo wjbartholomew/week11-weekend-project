@@ -11,11 +11,22 @@ class SupportForm extends Component {
     goToComment = (event) => {
         event.preventDefault()
         console.log(this.props)
+
+
+        const support = this.state.support
+        console.log("input:", support)
+
+        if (isNaN(support) || support < 1 || support > 5) {
+            alert("please enter a valid number")
+        }
+        else {
+
         this.props.dispatch({
             type: 'SUPPORT',
             payload: this.state.support
         })
         this.props.history.push('/CommentForm');
+    }
     }
 
     handleChange = (event) => {
