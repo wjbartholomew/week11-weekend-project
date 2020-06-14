@@ -7,8 +7,15 @@ class ReviewPage extends Component {
 
     goToConfirmation = (event) => {
         event.preventDefault()
+        const reducer = this.props.reduxStore.feedbackReducer
+        if (reducer.feeling === undefined || reducer.support === undefined || reducer.understanding === undefined || reducer.comments === undefined ) {
+            alert("Incomplete feedback form. Please start over and submit all fields.")
+            this.props.history.push('/');
+        }
+        else {
         console.log(this.props)
         this.props.history.push('/ConfirmationPage');
+        }
     }
 
 
@@ -17,7 +24,7 @@ class ReviewPage extends Component {
             <>
             <h1>Review Page</h1>
             <form onSubmit={this.goToConfirmation}>
-                <button type="submit" onClick={this.goToConfirmation}>Next</button>
+                <button type="submit" onClick={this.goToConfirmation}>Submit</button>
                 <p>Feeling: {this.props.reduxStore.feedbackReducer.feeling}</p>
                 <p>Understanding: {this.props.reduxStore.feedbackReducer.understanding}</p>
                 <p>Support: {this.props.reduxStore.feedbackReducer.support}</p>
