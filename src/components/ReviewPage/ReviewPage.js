@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-// import axios from 'axios';
+import axios from 'axios';
+
 
 
 class ReviewPage extends Component {
@@ -14,9 +15,19 @@ class ReviewPage extends Component {
         }
         else {
         console.log(this.props)
+        axios.post('/feedback', reducer)
+        .then((response) => {    
         this.props.history.push('/ConfirmationPage');
+        }).catch((error) => {
+        console.log('Failed POST', error)
+        })
+        
         }
     }
+
+
+
+    
 
 
     render() {
