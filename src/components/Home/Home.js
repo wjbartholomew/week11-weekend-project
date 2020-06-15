@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 
-// import './App.css';
 
 class Home extends Component {
 
-
-startFeedback = () => {
-this.props.history.push('/FeelingForm')
-}
+    //advance to first form
+    startFeedback = () => {
+        this.props.history.push('/FeelingForm')
+    }
 
 
 
@@ -20,5 +19,6 @@ this.props.history.push('/FeelingForm')
         );
     }
 }
+
 
 export default connect()(Home);

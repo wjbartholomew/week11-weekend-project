@@ -4,27 +4,32 @@ import { connect } from 'react-redux';
 
 class FeelingForm extends Component{
 
+
     state = {}
 
-goToUnderstanding = (event) => {
-    event.preventDefault()
 
-    const feeling = this.state.feeling
-    console.log("input:", feeling)
+    goToUnderstanding = (event) => {
 
-    if(isNaN(feeling) || feeling < 1 || feeling > 5) {
-        alert("please enter a valid number")
+        event.preventDefault()
+        const feeling = this.state.feeling
+        console.log("input:", feeling)
+
+        //input validation
+        if(isNaN(feeling) || feeling < 1 || feeling > 5) {
+            alert("please enter a valid number")
+        }
+
+        else {
+            //send data to reducer
+            this.props.dispatch({
+                type: 'FEELING',
+                payload: this.state.feeling
+            })
+            // advance to next form
+            this.props.history.push('/UnderstandingForm');
+        }
     }
-    else {
 
-    this.props.dispatch({
-        type: 'FEELING',
-        payload: this.state.feeling
-    })
-
-    this.props.history.push('/UnderstandingForm');
-}
-}
 
 handleChange = (event) => {
     this.setState({
@@ -51,10 +56,11 @@ handleChange = (event) => {
     }
 }
 
+
 const putReduxStateOnProps = (reduxStore) => {
-return {
-    reduxStore
-}
+    return {
+        reduxStore
+    }
 }
 
 

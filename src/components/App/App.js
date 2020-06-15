@@ -1,7 +1,11 @@
+//import modules
 import React, { Component } from 'react';
 import {HashRouter as Router, Route} from 'react-router-dom';
 
+//import styling
 import './App.css';
+
+//import components
 import Home from '../Home/Home.js';
 import FeelingForm from '../FeelingForm/FeelingForm';
 import UnderstandingForm from '../UnderstandingForm/UnderstandingForm';
@@ -9,6 +13,7 @@ import CommentForm from '../CommentForm/CommentForm';
 import SupportForm from '../SupportForm/SupportForm';
 import ReviewPage from '../ReviewPage/ReviewPage';
 import ConfirmationPage from '../ConfirmationPage/ConfirmationPage';
+
 
 class App extends Component {
   render() {
