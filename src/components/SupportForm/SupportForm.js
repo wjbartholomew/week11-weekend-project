@@ -40,6 +40,8 @@ class SupportForm extends Component {
         return (
             <>
             <h1>Support Form</h1>
+            <h2>Please let us know how well supported you are feeling on a scale from 1 to 5.</h2>
+
             <form onSubmit={this.goToComment}>
                 <input type="number" onChange={this.handleChange}></input>
                 <button type="submit" onClick={this.goToComment}>Next</button>

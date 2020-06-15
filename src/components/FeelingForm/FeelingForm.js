@@ -37,11 +37,15 @@ handleChange = (event) => {
     render(){
         return(
             <>
-            <h1>Feeling Form</h1>
-            <form onSubmit={this.goToUnderstanding}>
-                <input onChange={this.handleChange} type="number"></input>
-                <button type="submit" onClick={this.goToUnderstanding}>Next</button>
-            </form>
+
+                <h1>Feeling Form</h1>
+                <h2>Please let us know how you are feeling on a scale of 1 to 5.</h2>
+
+                <form onSubmit={this.goToUnderstanding}>
+                    <input onChange={this.handleChange} type="number"></input>
+                    <button type="submit" onClick={this.goToUnderstanding}>Next</button>
+                </form>
+
             </>
         )
     }

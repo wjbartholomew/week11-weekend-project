@@ -37,6 +37,7 @@ class UnderstandingForm extends Component {
         return (
             <>
             <h1>Understanding Form</h1>
+            <h2>Please let us know how well you are understanding the current material on a scale from 1 to 5.</h2>
             <form onSubmit={this.goToSupport}>
                 <input onChange={this.handleChange} type="number"></input>
                 <button type="submit" onClick={this.goToSupport}>Next</button>

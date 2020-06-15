@@ -39,6 +39,7 @@ class CommentForm extends Component {
         return (
             <>
             <h1>Comment Form</h1>
+            <h2>Please leave a comment letting us know how you are doing!</h2>
             <form onSubmit={this.goToReview}>
                 <input type="text" onChange={this.handleChange} required></input>
                 <button type="submit" onClick={this.goToReview}>Next</button>
